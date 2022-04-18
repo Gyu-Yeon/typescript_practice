@@ -25,3 +25,7 @@ let project: {
   days: 30,
   started: true,
 };
+
+// any, unknown
+
+let 변수1: string = 이름;
