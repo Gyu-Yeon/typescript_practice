@@ -16,3 +16,8 @@ var project = {
     days: 30,
     started: true,
 };
+// any, unknown
+var 회원 = 123;
+
+
+const prime =23;

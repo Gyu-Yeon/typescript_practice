@@ -27,5 +27,5 @@ let project: {
 };
 
 // any, unknown
-
-let 변수1: string = 이름;
+let 회원 :number | string =123;              
+let 회원들2 :number | string =123;             
