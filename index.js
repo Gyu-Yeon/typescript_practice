@@ -35,3 +35,52 @@ var 학교 = {
 };
 학교.score[4] = false;
 학교.friend = ["Lee", 학교.teacher];
+function 함수(x) {
+    return x * 2;
+}
+function 함수2(x) {
+    1 + 1;
+}
+//return 하는걸 사전에 막는 void 타입
+//자바스크립트와 타입스크립트의 다른점: 파라미터에 타입을 지정하면 파라미터를 무조건 넣어줘야함.
+function 함수3(x) { }
+//하지만 함수3처럼 파라미터가 옵션일 경우에는 파라미터변수에 ? 타입을 설정.
+//? :number 타입은 :number | undefined 와 같은 개념.
+function 함수4(이름) {
+    if (!이름) {
+        console.log("이름이 없습니다.");
+    }
+    else {
+        console.log("안녕하세요" + 이름);
+    }
+}
+function 함수5(x) {
+    console.log(x.toString().length);
+}
+//narrowing 으로 판정해주는 문법들
+//typeOf 변수
+// 속성명 in 오브젝트자료
+// 인스턴스 instanceOf 부모
+function 함수7(x) {
+    if (typeof x === "string") {
+        return x + "1";
+    }
+    else {
+        return x + 1;
+    }
+}
+function 함수8(x) {
+    var array = [];
+    if (typeof x === "number") {
+        array[0] = x;
+    }
+}
+//assertion 문법 (타입 덮어쓰기)
+// 타입을 a 에서 b 로 변경하는 문법이 아님
+//ex) let 이름 : string = 'kim';
+//    이름 as number;
+// 무슨 타입이 들어올지 100% 확실할 때 사용
+function 함수9(x) {
+    var array = [];
+    array[0] = x;
+}
