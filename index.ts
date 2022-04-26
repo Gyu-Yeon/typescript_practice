@@ -27,5 +27,29 @@ let project: {
 };
 
 // any, unknown
+let 회원들: (number | string)[] = [1, "2", 3];
+let 오브젝트: { a: string | number } = { a: "123" };
 
-let 변수1: string = 이름;
+let 성명: any;
+성명 = 123;
+성명 = [];
+
+let 성명2: unknown; //중요: any = 쉴드 해제 typescript를 쓰지 않겠다는 뜻,
+//중요: unknown = any의 단점을 보완해주는 것.
+
+let user: string = "kim";
+let age: undefined | number = undefined;
+let married: boolean = false;
+let 철수: (string | undefined | number | boolean)[] = [user, age, married];
+
+let 학교: {
+  score: (number | boolean)[];
+  teacher: string;
+  friend: string | string[];
+} = {
+  score: [100, 97, 84],
+  teacher: "Phil",
+  friend: "John",
+};
+학교.score[4] = false;
+학교.friend = ["Lee", 학교.teacher];
