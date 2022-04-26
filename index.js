@@ -12,7 +12,9 @@ var 나이 = 25;
 var 출생지역 = "Seoul";
 var favorite = { 가수: "빅뱅", 제목: "거짓말" };
 var project = {
-    member: ["kim", "park"],
-    days: 30,
-    started: true,
+  member: ["kim", "park"],
+  days: 30,
+  started: true,
 };
+// any, unknown
+var 변수1 = 이름;
