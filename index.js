@@ -61,6 +61,7 @@ function 함수5(x) {
 //typeOf 변수
 // 속성명 in 오브젝트자료
 // 인스턴스 instanceOf 부모
+// else 문이 없으면 에러 출력할 수도 있기 때문에 주의!
 function 함수7(x) {
     if (typeof x === "string") {
         return x + "1";
@@ -83,4 +84,17 @@ function 함수8(x) {
 function 함수9(x) {
     var array = [];
     array[0] = x;
+}
+function 클리닝함수(x) {
+    var cleaned = [];
+    x.forEach(function (n) {
+        if (typeof n === "string") {
+            var changed = parseInt(n);
+            cleaned.push(changed);
+        }
+        else {
+            cleaned.push(n);
+        }
+    });
+    console.log(cleaned);
 }
