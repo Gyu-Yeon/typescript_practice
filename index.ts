@@ -121,3 +121,11 @@ function 클리닝함수(x: (number | string)[]) {
   });
   console.log(cleaned);
 }
+
+function 자릿수함수(x: number | string) {
+  if (typeof x === "string") {
+    return x.length;
+  } else {
+    return x.toString().length;
+  }
+}

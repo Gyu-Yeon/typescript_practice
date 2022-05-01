@@ -98,3 +98,11 @@ function 클리닝함수(x) {
     });
     console.log(cleaned);
 }
+function 자릿수함수(x) {
+    if (typeof x === "string") {
+        return x.length;
+    }
+    else {
+        return x.toString().length;
+    }
+}
