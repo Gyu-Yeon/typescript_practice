@@ -1,4 +1,6 @@
+"use strict";
 //type 의 종류 string number boolean null undifined
+Object.defineProperty(exports, "__esModule", { value: true });
 // let 이름: string = "kim";
 // let 나이: number = 50;
 // let 결혼했니: boolean = true;
@@ -106,3 +108,17 @@ function 자릿수함수(x) {
         return x.toString().length;
     }
 }
+function 결혼가능확률(월소득, 집보유여부, 매력점수) {
+    var total = 0;
+    total = total + 월소득;
+    if (집보유여부 === true) {
+        total = total + 500;
+    }
+    if (매력점수 === "상") {
+        total = total + 100;
+    }
+    if (total >= 600) {
+        return "결혼가능";
+    }
+}
+var 동물 = 123;

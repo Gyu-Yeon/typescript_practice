@@ -1,5 +1,7 @@
 //type 의 종류 string number boolean null undifined
 
+import { type } from "os";
+
 // let 이름: string = "kim";
 // let 나이: number = 50;
 // let 결혼했니: boolean = true;
@@ -129,3 +131,24 @@ function 자릿수함수(x: number | string) {
     return x.toString().length;
   }
 }
+
+function 결혼가능확률(월소득: number, 집보유여부: boolean, 매력점수: string) {
+  let total: number = 0;
+  total = total + 월소득;
+  if (집보유여부 === true) {
+    total = total + 500;
+  }
+  if (매력점수 === "상") {
+    total = total + 100;
+  }
+  if (total >= 600) {
+    return "결혼가능";
+  }
+}
+
+//type alias
+//타입이 길면 변수에 저장하여 사용할 수 있음.
+
+type Animal = string | number | undefined;
+
+let 동물: Animal = 123;
