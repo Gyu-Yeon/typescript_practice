@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // };
 var 이름 = "Choi";
 var 나이 = 25;
-var 출생지역 = "Seoul";
+// let 출생지역: string = "Seoul";
 var favorite = { 가수: "빅뱅", 제목: "거짓말" };
 var project = {
     member: ["kim", "park"],
@@ -122,3 +122,24 @@ function 결혼가능확률(월소득, 집보유여부, 매력점수) {
     }
 }
 var 동물 = 123;
+var 동물2 = { name: "kim", age: 20 };
+//const 변수에 담긴 자료는 수정이 불가능 하지만, const 변수에 담긴 오브젝트의 안에 있는 자료는 변경가능.
+var 출생지역 = { region: "seoul" };
+출생지역.region = "busan";
+var 여친 = {
+    name: "엠버",
+};
+var position = { x: 10, y: 20 };
+var user1 = { name: "kim", phone: 123, email: "asdsad", adult: true };
+// Literal types
+// 타입스크립트는, let 이름:string: << 보다 더 엄격한 타입 지정가능
+var 이름1;
+function 가위바위보(a) {
+    return ["가위", "보"];
+}
+//파라미터 자리에 들어올 수 있는것은 'kim' 이라는 타입이기 때문에 자료.name을 했을때 string 타입의 kim이 들어오면 에러 출력.
+var 자료 = {
+    name: "kim",
+};
+function 내함수(a) { }
+내함수(자료.name);

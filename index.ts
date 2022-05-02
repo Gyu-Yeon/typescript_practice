@@ -14,7 +14,7 @@ import { type } from "os";
 
 let 이름: string = "Choi";
 let 나이: number = 25;
-let 출생지역: string = "Seoul";
+// let 출생지역: string = "Seoul";
 
 let favorite: { 가수: string; 제목: string } = { 가수: "빅뱅", 제목: "거짓말" };
 
@@ -148,7 +148,67 @@ function 결혼가능확률(월소득: number, 집보유여부: boolean, 매력�
 
 //type alias
 //타입이 길면 변수에 저장하여 사용할 수 있음.
+//타입 변수는 대문자로 작명 혹은 ,뒤에 type을 붙이기.
 
 type Animal = string | number | undefined;
-
 let 동물: Animal = 123;
+
+type Animal2 = { name: string; age: number };
+let 동물2: Animal2 = { name: "kim", age: 20 };
+
+//const 변수에 담긴 자료는 수정이 불가능 하지만, const 변수에 담긴 오브젝트의 안에 있는 자료는 변경가능.
+const 출생지역 = { region: "seoul" };
+출생지역.region = "busan";
+
+type Girlfriend = {
+  readonly name: string;
+};
+
+const 여친: Girlfriend = {
+  name: "엠버",
+};
+// 여친.name = "유라";
+
+//readonly 속성으로 ts파일에서는 에러를 띄움.
+// 하지만 실제 변환된 js파일은 에러없이 잘 변환되어있음.
+
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+
+type PositionX = { x: number };
+type PositionY = { y: number };
+
+type NewType = PositionX & PositionY;
+
+let position: NewType = { x: 10, y: 20 };
+
+// &기호는 extend 하기.
+// 같은 이름의 type 변수는 다시 정의할 수 없다.
+
+type Customed1 = { color?: string; size: number; position: number[] };
+
+type Personal = { name: string; phone: number; email: string };
+type Personal2 = { adult: boolean };
+
+type User = Personal & Personal2;
+
+let user1: User = { name: "kim", phone: 123, email: "asdsad", adult: true };
+
+// Literal types
+// 타입스크립트는, let 이름:string: << 보다 더 엄격한 타입 지정가능
+
+let 이름1: "kim";
+
+function 가위바위보(a: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
+  return ["가위", "보"];
+}
+
+//파라미터 자리에 들어올 수 있는것은 'kim' 이라는 타입이기 때문에 자료.name을 했을때 string 타입의 kim이 들어오면 에러 출력.
+let 자료 = {
+  name: "kim",
+};
+
+function 내함수(a: "kim") {}
+
+내함수(자료.name);
