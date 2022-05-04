@@ -1,7 +1,5 @@
 //type 의 종류 string number boolean null undifined
 
-import { type } from "os";
-
 // let 이름: string = "kim";
 // let 나이: number = 50;
 // let 결혼했니: boolean = true;
@@ -210,5 +208,79 @@ let 자료 = {
 };
 
 function 내함수(a: "kim") {}
+// 내함수(자료.name);
 
-내함수(자료.name);
+//type alias에 함수 type 저장해서 쓰는 법
+
+//functin 함수(){} == 함수 선언식
+// let 함수 = function(){} == 함수 표현식
+
+type 함수타입 = (a: string) => number;
+
+let 함수20: 함수타입 = function (a) {
+  return 10;
+};
+
+type 회원정보타입 = (a: number) => number;
+type changeNameType = () => void;
+
+// let 회원정보: {
+//   name: string;
+//   plusOne: 회원정보타입;
+//   changeName: changeNameType;
+// } = {
+//   name: "kim",
+//   plusOne(a) {
+//     return a + 1;
+//   },
+//   changeName: () => {
+//     console.log("안녕");
+//   },
+// };
+
+type Member = {
+  name: string;
+  age: number;
+  plusOne: (x: number) => number;
+  changeName: () => void;
+};
+
+let 회원정보: Member = {
+  name: "kim",
+  age: 30,
+  plusOne(x) {
+    return x + 1;
+  },
+  changeName: () => {
+    console.log("안녕");
+  },
+};
+
+회원정보.plusOne(2);
+
+type cutZeroType = (a: string) => string;
+
+let cutZero: cutZeroType = function (a) {
+  if (typeof a === "string" && a[0] === "0") {
+    let word = a.slice(1);
+    return word;
+  } else {
+    return a;
+  }
+};
+
+cutZero("0aasfasf");
+
+type removeDashType = (a: string) => number;
+
+let removeDash: removeDashType = function (a) {
+  return parseInt(a.replace(/-/g, ""));
+};
+
+type 세번째함수type = (a: string, b: "cutZero", c: "removeDash") => number;
+
+let 만들함수: 세번째함수type = function (a, b, c) {
+  let cut = cutZero(a);
+  console.log(cut);
+  return removeDash(cut);
+};

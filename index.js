@@ -1,6 +1,4 @@
-"use strict";
 //type 의 종류 string number boolean null undifined
-Object.defineProperty(exports, "__esModule", { value: true });
 // let 이름: string = "kim";
 // let 나이: number = 50;
 // let 결혼했니: boolean = true;
@@ -142,4 +140,35 @@ var 자료 = {
     name: "kim",
 };
 function 내함수(a) { }
-내함수(자료.name);
+var 함수20 = function (a) {
+    return 10;
+};
+var 회원정보 = {
+    name: "kim",
+    age: 30,
+    plusOne: function (x) {
+        return x + 1;
+    },
+    changeName: function () {
+        console.log("안녕");
+    },
+};
+회원정보.plusOne(2);
+var cutZero = function (a) {
+    if (typeof a === "string" && a[0] === "0") {
+        var word = a.slice(1);
+        return word;
+    }
+    else {
+        return a;
+    }
+};
+cutZero("0aasfasf");
+var removeDash = function (a) {
+    return parseInt(a.replace(/-/g, ""));
+};
+var 만들함수 = function (a, b, c) {
+    var cut = cutZero(a);
+    console.log(cut);
+    return removeDash(cut);
+};
