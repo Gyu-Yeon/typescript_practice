@@ -172,3 +172,10 @@ var 만들함수 = function (a, b, c) {
     console.log(cut);
     return removeDash(cut);
 };
+var 제목 = document.querySelector("#title");
+// if (제목 != null) {
+//   제목.innerHTML = "반가워요";
+// }
+if (제목 instanceof Element) {
+    제목.innerHTML = "반가워요";
+}
