@@ -293,3 +293,52 @@ let 제목 = document.querySelector("#title");
 if (제목 instanceof Element) {
   제목.innerHTML = "반가워요";
 }
+
+let 이미지 = document.querySelector("#image");
+if (이미지 instanceof HTMLImageElement) {
+  이미지.src = "new.jpg";
+}
+
+let 링크 = document.querySelectorAll("naver");
+
+링크.forEach((a) => {
+  if (a instanceof HTMLAnchorElement) {
+    a.href = "https://kakao.com";
+  }
+});
+
+class Person1 {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Car {
+  model: string;
+  price: number;
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+  tax(): number {
+    return this.price / 10;
+  }
+}
+
+let car1 = new Car("소나타", 3000);
+
+class Word {
+  constructor(word: number | string) {
+    let num: number[] = [];
+    let str: string[] = [];
+    obj: [str, num];
+    if (typeof word === "number") {
+      num.push(word);
+    } else if (typeof word === "string") {
+      str.push(word);
+    }
+  }
+}

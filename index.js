@@ -179,3 +179,45 @@ var 제목 = document.querySelector("#title");
 if (제목 instanceof Element) {
     제목.innerHTML = "반가워요";
 }
+var 이미지 = document.querySelector("#image");
+if (이미지 instanceof HTMLImageElement) {
+    이미지.src = "new.jpg";
+}
+var 링크 = document.querySelectorAll("naver");
+링크.forEach(function (a) {
+    if (a instanceof HTMLAnchorElement) {
+        a.href = "https://kakao.com";
+    }
+});
+var Person1 = /** @class */ (function () {
+    function Person1(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    return Person1;
+}());
+var Car = /** @class */ (function () {
+    function Car(model, price) {
+        this.model = model;
+        this.price = price;
+    }
+    Car.prototype.tax = function () {
+        return this.price / 10;
+    };
+    return Car;
+}());
+var car1 = new Car("소나타", 3000);
+var Word = /** @class */ (function () {
+    function Word(word) {
+        var num = [];
+        var str = [];
+        obj: [str, num];
+        if (typeof word === "number") {
+            num.push(word);
+        }
+        else if (typeof word === "string") {
+            str.push(word);
+        }
+    }
+    return Word;
+}());
