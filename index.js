@@ -240,3 +240,32 @@ var homework = {
         return a - b;
     },
 };
+// ... rest 파라미터
+// ...을 활용하면, 파라미터가 무수히 많이 들어올 수 있다는 뜻.  그 수많은 파라미터들을 array안에 담아 출력한다.
+function rest() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    console.log(a);
+}
+//destructing 문법
+// 414줄의 안녕과 100을 각각 새로운 변수로 담고 싶을때 활용.
+// let newThing = ["안녕", 100];
+var _a = ["안녕", 100], 변수1 = _a[0], 변수2 = _a[1];
+var person = { student: true, age: 20 };
+function example(_a) {
+    var student = _a.student, age = _a.age;
+    console.log(student, age);
+}
+example({ student: true, age: 20 });
+function 최댓값() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    var sorted = a.sort(function (a, b) {
+        return a - b;
+    });
+    return sorted[sorted.length - 1];
+}
