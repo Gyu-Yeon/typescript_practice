@@ -445,6 +445,7 @@ function 예시2(animal: Fish | Bird) {
   }
 }
 
+//literal type을 넣어서 구분 지어 보기.
 type Car2 = {
   wheel: "4개";
   color: string;
@@ -454,4 +455,9 @@ type Bike = {
   color: string;
 };
 
-function 예시3(x: Car2 | Bike) {}
+function 예시3(x: Car2 | Bike) {
+  if (x.wheel === "4개") {
+  }
+}
+
+//type narrowing은 논리적으로 이 타입인지 특정지을 수 있으면 narrowing으로 인정해준다.
