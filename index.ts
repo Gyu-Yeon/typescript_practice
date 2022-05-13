@@ -454,10 +454,10 @@ type Bike = {
   wheel: "2개";
   color: string;
 };
-
+//literal type 지정하기.
 function 예시3(x: Car2 | Bike) {
   if (x.wheel === "4개") {
   }
 }
-
+//literal type 지정하기.
 //type narrowing은 논리적으로 이 타입인지 특정지을 수 있으면 narrowing으로 인정해준다.
